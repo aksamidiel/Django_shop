@@ -61,17 +61,17 @@ class Publishing_house(models.Model):  #описание издательств�
         return self.name
 
 class Binding(models.Model):  #переплет книги
-    binding=models.CharField('Тип переплета',null=False, blank=False, max_length=50, db_index=True, unique=True)   #вид переплета
+    bindings=models.CharField('Тип переплета',null=False, blank=False, max_length=50, db_index=True, unique=True)   #вид переплета
     description=models.CharField('Описание', max_length=100, db_index=True)  #описание переплета
 
 
     class Meta:
-        ordering=['binding']
+        ordering=['bindings']
         verbose_name='Переплет книги'
         verbose_name_plural='Виды переплета'
 
     def __str__(self):
-        return self.binding
+        return self.bindings
 
 
 class Format(models.Model):  #переплет книги

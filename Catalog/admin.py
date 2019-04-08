@@ -10,8 +10,8 @@ from books.models import Book
 
 #модель серии
 class SerieAdmin(admin.ModelAdmin):
-    list_display=['name', 'descriptions']
-    list_editable=['name','descriptions']
+    list_display=['name', 'description']
+   
     prepopulated_fields={'description':('name',)}
 
 
