@@ -75,17 +75,22 @@ class Binding(models.Model):  #переплет книги
 
 
 class Format(models.Model):  #переплет книги
-    format=models.CharField('Формат',null=False, blank=False, max_length=50, db_index=True, unique=True)   #формат книги
+    formate=models.CharField('Формат',null=False, blank=False, max_length=50, db_index=True, unique=True)   #формат книги
     description=models.CharField('Описание', max_length=100, db_index=True)  #описание формата
 
 
     class Meta:
-        ordering=['format']
+        ordering=['formate']
         verbose_name='Формат книги'
         verbose_name_plural='Виды форматов'
 
     def __str__(self):
-        return self.format
+        return self.formate
+
+
+
+
+        
 
 
 
