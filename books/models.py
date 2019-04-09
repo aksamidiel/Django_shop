@@ -9,7 +9,7 @@ from Catalog.models import *
 class Book(models.Model):
     name=models.CharField(max_length=100, db_index=True, null=False, blank=False, verbose_name="Название")
     description=models.TextField(max_length=200, editable=True)
-    image=models.ImageField(upload_to='products/%Y/%m/%d/', blank=True, verbose_name="Изображение товара")
+    image=models.ImageField(upload_to='books/pics/%Y/%m/%d/', blank=True, verbose_name="Изображение товара")
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
     author=models.ForeignKey(Authors, related_name='author',verbose_name="Авторство", on_delete=models.PROTECT)
     serie=models.ForeignKey(Serie, related_name='series',verbose_name="Серия", on_delete=models.PROTECT)

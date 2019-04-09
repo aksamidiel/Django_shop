@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Catalog import views
+from contacts.views import about, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',index),
+    path('contacts', about)
    
 ]
