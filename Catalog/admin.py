@@ -11,7 +11,6 @@ from books.models import Book
 #модель серии
 class SerieAdmin(admin.ModelAdmin):
     list_display=['name', 'description']
-   
     prepopulated_fields={'description':('name',)}
 
 
@@ -28,8 +27,8 @@ class PublishAdmin(admin.ModelAdmin):
     prepopulated_fields={'description':('name',)}
 
 class BindingAdmin(admin.ModelAdmin):
-    list_display=['binding', 'description']
-    prepopulated_fields={'description':('binding',)}
+    list_display=['bindings', 'description']
+    prepopulated_fields={'description':('bindings',)}
 
 class FormatAdmin(admin.ModelAdmin):
     list_display=['formate', 'description']
@@ -43,6 +42,7 @@ class BookAdmin(admin.ModelAdmin):
     prepopulated_fields = {'description': ('name', )}
 
 admin.site.register(Book, BookAdmin)
+
 admin.site.register(Authors, AuthorAdmin)
 admin.site.register(Publishing_house, PublishAdmin)
 admin.site.register(Genre,GenreAdmin)

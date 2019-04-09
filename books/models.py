@@ -16,7 +16,7 @@ class Book(models.Model):
     genre=models.ForeignKey(Genre, related_name='genres', verbose_name='Жанры', on_delete=models.PROTECT)
     years_to_create=models.DateField(verbose_name='год издания', auto_now=False, default='1950')
     count_sheets=models.PositiveSmallIntegerField(verbose_name='число страниц')
-    binding=models.ForeignKey(Binding, on_delete=models.PROTECT, related_name='binding', verbose_name='виды_переплета')
+    bindings=models.ForeignKey(Binding, on_delete=models.PROTECT, related_name='bindingse', verbose_name='виды_переплета')
     formate=models.ForeignKey(Format, on_delete=models.PROTECT, related_name='formats', verbose_name='формат')
     ISBN=models.SmallIntegerField(verbose_name='универсальный номер')
     mass=models.SmallIntegerField(verbose_name='вес')

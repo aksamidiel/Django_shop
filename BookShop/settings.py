@@ -41,7 +41,8 @@ DEFAULT_APPS = [
 
 MY_APPS=[
     'Catalog',
-    'books'
+    'books',
+    'contacts'
 ]
 
 INSTALLED_APPS=DEFAULT_APPS+MY_APPS
