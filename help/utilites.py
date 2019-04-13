@@ -1,5 +1,7 @@
 from Catalog.models import *
 import Catalog.models as model
+from books.models import Book
+
 
 
 def function_Create():
@@ -123,6 +125,19 @@ def bind_book(r_name, p_k):
         print(i)
 
 
+#создание книги из словаря
+
+def createBook(book):
+    b=Book(name=book['name'], description=book['description'], price=book['price'],
+    years_to_create=book['years_to_create'], count_sheets=book['count_sheets'],
+    ISBN=book['ISBN'], mass=book['mass'], rating=book['rating'], stock=book['stock'],
+    available=book['available']
     
+    )
+
+    b.genre= Genre.objects.get(name=book[''])
+
+
+
 
 
