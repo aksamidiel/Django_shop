@@ -113,7 +113,8 @@ def searching_f_name(p_name):
 def create_updater(name_serie, description_serie):
     s, creat=Serie.objects.update_or_create(
         name=name_serie,
-        description=description_serie
+
+        defaults={'description: ':'some text'}   
     )
 
 

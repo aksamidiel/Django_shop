@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Series</title>
+    <style type="text/css">
+        table {
+            border: 8px;
+            width: 650px;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px dotted green
+        }
+        caption {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+<table  align="center" cellpadding="6px" >
+
+    <caption>Серии</caption>
+
+    <tr>
+        <th>Название_серии</th>
+        <td>{{ object.name }}</td>
+    </tr>
+
+    <tr>
+        <th>Описание</th>
+        <td>{{ object.description }}</td>
+    </tr>
+    
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bindings</title>
+    <style type="text/css">
+        table {
+            border: 8px;
+            width: 650px;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px dotted green
+        }
+        caption {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+<table  align="center" cellpadding="6px" >
+    <caption>Типы_переплетов</caption>
+
+    <tr>
+        <th>Тип</th>
+        <td>{{ object.bindings }}</td>
+    </tr>
+
+    <tr>
+        <th>Описание</th>
+        <td>{{ object.description }}</td>
+    </tr>
+
+</table>
+</body>
+</html>
