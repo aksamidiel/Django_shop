@@ -42,7 +42,9 @@ DEFAULT_APPS = [
 MY_APPS=[
     'Catalog',
     'books',
-    'contacts'
+    'contacts',
+
+    
 ]
 
 INSTALLED_APPS=DEFAULT_APPS+MY_APPS
@@ -59,10 +61,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'BookShop.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],   #добавили место поиска шаблонов
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
