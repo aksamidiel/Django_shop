@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Authors</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <ul class="list-group">Авторы
+
+        {% for object in object_list %}
+            <li class="list-group-item list-group-item-action"><a href="http://127.0.0.1:8000/ref/author/{{ object.pk }}">
+                {{ object.first_name }}{{ object.last_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

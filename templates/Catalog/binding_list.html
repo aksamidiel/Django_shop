@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Bindings</title>
+
+</head>
+<body>
+
+    <ul>Типы_переплетов
+        {% for object in object_list %}
+            <li><a href="http://127.0.0.1:8000/ref/binding/{{ object.pk }}">
+
+                {{ object.bindings }} </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

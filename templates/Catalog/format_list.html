@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formats</title>
+</head>
+<body>
+    <ul>Типы_форматов
+        {% for object in object_list %}
+            <li><a href="http://127.0.0.1:8000/ref/format/{{ object.pk }}">
+                {{ object.formate }} </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

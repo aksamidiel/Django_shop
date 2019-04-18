@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publish_houses</title>
+</head>
+<body>
+    <ul>Издательские_дома
+        {% for object in object_list %}
+            <li><a href="http://127.0.0.1:8000/ref/publish/{{ object.pk }}">
+                {{ object.name }} </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
