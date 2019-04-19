@@ -23,6 +23,7 @@ from contacts.views import about, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path('ref/author/<int:pk>', AuthorDetail.as_view()),
     path('ref/binding/<int:pk>', BindingDetail.as_view()),
     path('ref/format/<int:pk>', FormatDetail.as_view()),
