@@ -16,28 +16,34 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Catalog.views import * 
-
+from django.views.generic import TemplateView
+from books.models import Menu
 from contacts.views import about, index
 
 #admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ref/author/<int:pk>', AuthorDetail.as_view()),
-    path('ref/binding/<int:pk>', BindingDetail.as_view()),
-    path('ref/format/<int:pk>', FormatDetail.as_view()),
-    path('ref/genre/<int:pk>', GenreDetail.as_view()),
-    path('ref/publish/<int:pk>', PublishDetail.as_view()),
-    path('ref/serie/<int:pk>', SerieDetail.as_view()),
+    path('author/', AuthorList.as_view(), name='author_list'),
+    path('ref/author/<int:pk>', AuthorDetail.as_view(), name='author_detail'),
+    path('ref/binding/<int:pk>', BindingDetail.as_view(), name='binding_detail'),
+    path('ref/format/<int:pk>', FormatDetail.as_view(), name='format_detail'),
+    path('ref/genre/<int:pk>', GenreDetail.as_view(), name='genre_detail'),
+    path('ref/publish/<int:pk>', PublishDetail.as_view(), name='publish_detail'),
+    path('ref/serie/<int:pk>', SerieDetail.as_view(), name='serie_detail'),
 
-    path('ref/author/', AuthorList.as_view()),
-    path('ref/binding/', BindingList.as_view()),
-    path('ref/format/', FormatList.as_view()),
-    path('ref/genre/', GenreList.as_view()),
-    path('ref/publish/', PublishList.as_view()),
-    path('ref/serie/', SerieList.as_view()),
+    #path('ref/author/', AuthorList.as_view()),
+    path('ref/binding/', BindingList.as_view(), name='binding_list'),
+    path('ref/format/', FormatList.as_view(), name='format_list'),
+    path('ref/genre/', GenreList.as_view(), name='genre_list'),
+    path('ref/publish/', PublishList.as_view(), name='publish_list'),
+    path('ref/serie/', SerieList.as_view(), name='serie_list'),
 
-    path('',index),
+
+    path('book/', BookList.as_view(), name='book_list'),
+    path('book/<int:pk>', BookDetail.as_view(), name='book_detail'),
+
+    path('',Menu.as_view()),   #вывод меню
     path('contacts', about)
    
 ]

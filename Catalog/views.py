@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
+from django.views.generic import TemplateView
 from .models import *
+from books.models import Menu
+from BookShop.search_form import SearchFormAuthor, List_Filter
 
 
 # Create your views here.
@@ -50,6 +54,9 @@ class FormatDetail(DetailView):
     model=Format
 class FormatList(ListView):
     model=Format
+
+
+
 
 
 
