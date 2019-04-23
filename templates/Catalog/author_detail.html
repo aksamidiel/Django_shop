@@ -1,42 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Authors</title>
-    <style type="text/css">
-        table {
-            border: 8px;
-            width: 650px;
-        }
-        th, td {
-            padding: 8px;
-            border: 1px dotted green
-        }
-        caption {
-            font-size: 3em;
-        }
-    </style>
-</head>
-<body>
-<table  align="center" cellpadding="6px" >
+{% extends 'base_detail.html' %}
+{% block title %}
+   Автор{{object.name}}
+{% endblock %}
 
-    <caption>Авторы</caption>
 
-    <tr>
-        <th>Фамилия</th>
-        <td>{{ object.first_name }}</td>
-    </tr>
+{% block for_list %}
+    <a href="{% url 'author_list' %}">Авторы</a>
+{% endblock %}
 
-    <tr>
-        <th>Имя</th>
-        <td>{{ object.last_name }}</td>
-    </tr>
-
-    <tr>
-        <th>Страна</th>
-        <td>{{ object.country }}</td>
-    </tr>
-
-</table>
-</body>
-</html>
+{% block base %}
+    {% include "base.html" %}
+    <p><strong>Страна:</strong> {{ object.country }}</p>
+{% endblock %}

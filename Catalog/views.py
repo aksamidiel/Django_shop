@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 from .models import *
 from books.models import Menu
-from BookShop.search_form import SearchFormAuthor, List_Filter
+from BookShop.search_form import Search_Author, List_Filter
 
 
 # Create your views here.
@@ -20,40 +20,57 @@ from BookShop.search_form import SearchFormAuthor, List_Filter
 #        return context
      
 
+
+#для меню
+class Menu_view(TemplateView):
+    template_name='books/menu_view.html'
+
 #для вьюхи серий
 class SerieDetail(DetailView):
     model=Serie
-class SerieList(ListView):
+class SerieList(List_Filter):
     model=Serie
+    extra_context={'url_detail': 'serie_detail'}
 
 #для вьюхи жанра
 class GenreDetail(DetailView):
     model=Genre
-class GenreList(ListView):
+class GenreList(List_Filter):
     model=Genre
+    extra_context={'url_detail': 'genre_detail'}
 
 #для вьюхи автора
 class AuthorDetail(DetailView):
     model=Authors
-class AuthorList(ListView):
+class AuthorList(List_Filter):
     model=Authors
+    form=Search_Author
+    extra_context={'url_detail': 'author_detail'}
+
 #для вьхи издательства
 class PublishDetail(DetailView):
     model=Publishing_house
-class PublishList(ListView):
+
+class PublishList(List_Filter):
     model=Publishing_house
+    extra_context={'url_detail': 'publish_detail'}
+
 
 #для вьхи переплета
 class BindingDetail(DetailView):
     model=Binding
-class BindingList(ListView):
+class BindingList(List_Filter):
     model=Binding
+    extra_context={'url_detail': 'binding_detail'}
 
 #для вьхи формата
 class FormatDetail(DetailView):
     model=Format
-class FormatList(ListView):
+class FormatList(List_Filter):
     model=Format
+    extra_context={'url_detail': 'format_detail'}
+
+
 
 
 

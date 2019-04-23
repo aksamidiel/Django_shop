@@ -2,16 +2,16 @@ from django import forms
 from django.views.generic import ListView
 
 
-class SearchForm(forms.Form):
+class Search_Form(forms.Form):
     search = forms.CharField(label='Наименование', required=False)
 
 
-class SearchFormAuthor(forms.Form):
+class Search_Author(forms.Form):
     search = forms.CharField(label='Имя', required=False)
 
 
 class List_Filter(ListView):
-    form = SearchForm
+    form = Search_Form
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

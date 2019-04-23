@@ -1,37 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Formates</title>
-    <style type="text/css">
-        table {
-            border: 8px;
-            width: 650px;
-        }
-        th, td {
-            padding: 8px;
-            border: 1px dotted green
-        }
-        caption {
-            font-size: 3em;
-        }
-    </style>
-</head>
-<body>
-<table  align="center" cellpadding="6px" >
+{% extends 'base_detail.html' %}
+{% block title %}
+  Формат_книги {{ object.name }}
+{% endblock %}
 
-    <caption>Типы_форматов</caption>
+{% block for_list %}
+    <a href="{% url 'format_list' %}">Все форматы</a>
+{% endblock %}
 
-    <tr>
-        <th>Формат</th>
-        <td>{{ object.formate }}</td>
-    </tr>
-
-    <tr>
-        <th>Описание</th>
-        <td>{{ object.description }}</td>
-    </tr>
-    
-</table>
-</body>
-</html>
+{% block base %}
+    {% include "base.html" %}
+{% endblock %}

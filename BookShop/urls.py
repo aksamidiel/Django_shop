@@ -18,7 +18,8 @@ from django.urls import path, include
 from Catalog.views import * 
 from django.views.generic import TemplateView
 from books.models import Menu
-from contacts.views import about, index
+from books.views import BookList, BookDetail
+
 
 #admin.autodiscover()
 
@@ -43,7 +44,7 @@ urlpatterns = [
     path('book/', BookList.as_view(), name='book_list'),
     path('book/<int:pk>', BookDetail.as_view(), name='book_detail'),
 
-    path('',Menu.as_view()),   #вывод меню
-    path('contacts', about)
+    path('',Menu_view.as_view())  #вывод меню
+    #path('contacts', about)
    
 ]

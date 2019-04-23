@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Series</title>
-</head>
-<body>
-    <ul>Серии
-        {% for object in object_list %}
-            <li><a href="http://127.0.0.1:8000/ref/serie/{{ object.pk }}">
-                {{ object.name }} </a>
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'base_list.html' %}
+
+{% block title %}
+    Серии
+{% endblock %}
+
+{% block header %}
+        <H1>Серии</H1>
+    {% endblock %}

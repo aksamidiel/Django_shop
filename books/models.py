@@ -42,10 +42,10 @@ class Book(models.Model):
         return self.name
 
 class Menu(models.Model):
-    name=models.CharField("Пункт", max_length=30, unique=True)
-    url_name = models.CharField("Название ссылки", max_length=100)
-    parent_menu = models.ForeignKey('Menu', on_delete=models.PROTECT, related_name='parent_menu_item',
-                                related_query_name='parent_menu_item', null=True, blank=True)
+    name=models.CharField("Пункт", max_length=50, unique=True)
+    url_name = models.CharField("Cсылка", max_length=80)
+    general_menu = models.ForeignKey('Menu', on_delete=models.PROTECT, related_name='general_menu_obj',
+                                related_query_name='general_menu_obj', null=True, blank=True)
 
     def __str__(self):
         return self.name

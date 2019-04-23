@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'base_list.html' %}
 
-    <title>Bindings</title>
+{% block title %}
+    Виды_переплетов
+{% endblock %}
 
-</head>
-<body>
-
-    <ul>Типы_переплетов
-        {% for object in object_list %}
-            <li><a href="http://127.0.0.1:8000/ref/binding/{{ object.pk }}">
-
-                {{ object.bindings }} </a>
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% block header %}
+        <H1>Переплеты</H1>
+{% endblock %}

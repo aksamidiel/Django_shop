@@ -1,0 +1,35 @@
+{% extends 'base_detail.html' %}   
+{% block  title %}
+    Книга{{object.description}}
+{% endblock %}%}
+
+
+{% block for_list %}
+    <a href="{% url 'book_list' %}">Все книги</a>
+{% endblock %}
+
+
+{% block Book_store %}
+    <h3>{{ object.description }}</h3>
+    
+        <p><b>Цена: {{ object.price }} $.</b></p>
+    </div>
+
+    <div>
+        <p><bold>Название:</bold> {{ object.name }}</p>
+        <p><strong>Авторы:</strong> {{ object.author }}</p>
+        <p><strong>Серия:</strong> {{ object.serie }}</p>
+        <p><strong>Жанры:</strong> {{ object.genre }}</p>
+        <p><strong>Год выпуска:</strong> {{ object.years_to_create }}</p>
+        <p><strong>Число страниц:</strong> {{ object.count_sheets }}</p>
+        <p><strong>Тип переплета:</strong> {{ object.bindings }}</p>
+        <p><strong>Формат:</strong> {{ object.formate }}</p>
+        <p><strong>ISBN:</strong> {{ object.ISBN }}</p>
+        <p><strong>Вес:</strong> {{ object.mass }} гр</p>
+        <p><strong>Возраст:</strong> {{ object.rating }}</p>
+        <p><strong> {{ object.available|yesno:"В наличии ,Отсутствует" }}</strong></p>
+    </div>
+
+{% endblock %}
+
+
