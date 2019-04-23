@@ -25,6 +25,7 @@ from books.views import BookList, BookDetail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('author/', AuthorList.as_view(), name='author_list'),
     path('ref/author/<int:pk>', AuthorDetail.as_view(), name='author_detail'),
     path('ref/binding/<int:pk>', BindingDetail.as_view(), name='binding_detail'),
@@ -46,5 +47,6 @@ urlpatterns = [
 
     path('',Menu_view.as_view())  #вывод меню
     #path('contacts', about)
-   
+
+    
 ]
