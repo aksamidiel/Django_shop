@@ -1,9 +1,39 @@
-{% extends 'base_list.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Переплеты</title>
+<style type="text/css">
+        table {
+            min-width: 200px;
+        }
+        td {
+            padding: 7px;
+            background-color: palegreen;
+            border-radius: 10px;
+        }
+        caption {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
 
-{% block title %}
-    Виды_переплетов
-{% endblock %}
+    <form method="get" action="">
+        <input type="text" name="name" placeholder="Поиск по названию">
+        <input type="submit" value="Искать"><br>
+    </form>
 
-{% block header %}
-        <H1>Переплеты</H1>
-{% endblock %}
+    <table align="center" cellspacing="5px" >
+    <caption>Переплеты</caption>
+        {% for object in object_list %}
+            <tr>
+                <td>
+                    <a href="{% url 'binding_detail' object.pk %}">
+                    {{ object.bindings }} </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

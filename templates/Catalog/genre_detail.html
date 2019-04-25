@@ -1,12 +1,33 @@
-{% extends 'base_detail.html' %}
-{% block title %}
-  Жанр {{ object.name }}
-{% endblock %}
-
-{% block for_list %}
-    <a href="{% url 'genre_list' %}">Жанры</a>
-{% endblock %}
-
-{% block base %}
-    {% include "base.html" %}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Жанры</title>
+    <style type="text/css">
+        table {
+            border: 5px;
+            width: 500px;
+        }
+        th, td {
+            padding: 7px;
+            border: 2px dotted grey
+        }
+        caption {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<table  align="left" cellpadding="5px" >
+    <caption>Жанры</caption>
+    <tr>
+        <th>Название</th>
+        <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+        <th>Описание</th>
+        <td>{{ object.description }}</td>
+    </tr>
+</table>
+</body>
+</html>

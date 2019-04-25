@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Серии</title>
+    <title>Авторы</title>
     <style type="text/css">
         table {
             border: 5px;
@@ -19,14 +19,18 @@
 </head>
 <body>
 <table  align="left" cellpadding="5px" >
-    <caption>Серии</caption>
+    <caption>Авторы</caption>
     <tr>
-        <th>Название</th>
-        <td>{{ object.name }}</td>
+        <th>Фамилия</th>
+        <td>{{ object.first_name }}</td>
     </tr>
     <tr>
-        <th>Описание</th>
-        <td>{{ object.description }}</td>
+        <th>Имя</th>
+        <td>{{ object.last_name }}</td>
+    </tr>
+    <tr>
+        <th>Страна</th>
+        <td>{{ object.country }}</td>
     </tr>
 </table>
 </body>

@@ -1,9 +1,42 @@
-{% extends 'base_list.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Жанры</title>
+<style type="text/css">
+        table {
+            min-width: 200px;
+        }
+        td {
+            padding: 7px;
+            background-color: palegreen;
+            border-radius: 10px;
+        }
+        caption {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
 
-{% block title %}
-    Жанры
-{% endblock %}
+    <form method="get" action="">
+        <input type="text" name="name" placeholder="Поиск по названию">
+        <input type="submit" value="Искать"><br>
+    </form>
 
-{% block header %}
-        <H1>Жанры</H1>
-    {% endblock %}
+    <table align="center" cellspacing="5px">
+    <caption>Жанры</caption>
+        {% for object in object_list %}
+            <tr>
+                <td>
+                    <a href="{% url 'genre_detail' object.pk %}">
+                    {{ object.name }} </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+ 
+
+</body>
+</html>

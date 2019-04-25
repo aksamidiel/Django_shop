@@ -25,8 +25,8 @@ from books.views import BookList, BookDetail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', Menu_view.as_view(), name='menu'),
 
-    path('author/', AuthorList.as_view(), name='author_list'),
     path('ref/author/<int:pk>', AuthorDetail.as_view(), name='author_detail'),
     path('ref/binding/<int:pk>', BindingDetail.as_view(), name='binding_detail'),
     path('ref/format/<int:pk>', FormatDetail.as_view(), name='format_detail'),
@@ -34,7 +34,7 @@ urlpatterns = [
     path('ref/publish/<int:pk>', PublishDetail.as_view(), name='publish_detail'),
     path('ref/serie/<int:pk>', SerieDetail.as_view(), name='serie_detail'),
 
-    #path('ref/author/', AuthorList.as_view()),
+    path('ref/author/', AuthorList.as_view(), name='author_list'),
     path('ref/binding/', BindingList.as_view(), name='binding_list'),
     path('ref/format/', FormatList.as_view(), name='format_list'),
     path('ref/genre/', GenreList.as_view(), name='genre_list'),
@@ -45,7 +45,11 @@ urlpatterns = [
     path('book/', BookList.as_view(), name='book_list'),
     path('book/<int:pk>', BookDetail.as_view(), name='book_detail'),
 
-    path('',Menu_view.as_view())  #вывод меню
+    #create_field
+    path('ref/genre_create', Genre_Create.as_view(), name='genre_create'),
+    path('ref/serie_create', Serie_Create.as_view(), name='serie_create'),
+
+    #path('',Menu_view.as_view())  #вывод меню
     #path('contacts', about)
 
     

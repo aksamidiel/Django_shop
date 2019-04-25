@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Книги</title>
-    <style type="text/css">
+    <title>Издательства</title>
+<style type="text/css">
         table {
             min-width: 200px;
         }
         td {
             padding: 7px;
-            background-color: bisque;
+            background-color: palegreen;
+            border-radius: 10px;
         }
         caption {
             font-size: 2em;
@@ -23,13 +24,13 @@
         <input type="submit" value="Искать"><br>
     </form>
 
-    <table align="right" cellspacing="5px" cellpadding="5px">
-    <caption>Книги</caption>
+    <table align="center" cellspacing="5px" >
+    <caption>Издательства</caption>
         {% for object in object_list %}
             <tr>
                 <td>
-                    <a href="{% url 'book_detail' object.pk %}">
-                        {{ object.name }}</a>
+                    <a href="{% url 'publish_detail' object.pk %}">
+                    {{ object.name }} </a>
                 </td>
             </tr>
         {% endfor %}

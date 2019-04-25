@@ -1,16 +1,22 @@
 from django.db import models
+from django.urls import reverse   #используется для редиректа
 
 
 
 class Genre(models.Model): # жанр книги
     name=models.CharField("Название жанра", null=False, blank=False, max_length=100, db_index=True, unique=True)   #название жанра
-    description=models.CharField("Описание", max_length=300, db_index=True)  #описание жанра
+    description=models.CharField("Описание", max_length=500, db_index=True)  #описание жанра
+
 
 
     class Meta:
         ordering=['name']
         verbose_name='Жанр'
         verbose_name_plural='Жанры'
+
+    def get_absolute_url(self):
+        return reverse("genre_detail", kwargs={"pk": self.pk})
+    
 
     def __str__(self):
         return self.name
@@ -26,6 +32,10 @@ class Authors(models.Model):    #описание авторы
         ordering=['last_name']
         verbose_name='Автор'
         verbose_name_plural='Авторы'
+
+    def get_absolute_url(self):
+        return reverse("authors_detail", kwargs={"pk": self.pk})
+    
        
 
     def __str__(self):
@@ -43,6 +53,10 @@ class Serie(models.Model):   #описание серии
         verbose_name='Серия'
         verbose_name_plural='Серии'
 
+    def get_absolute_url(self):
+        return reverse("serie_detail", kwargs={"pk": self.pk})
+    
+
     def __str__(self):
         return self.name
 
@@ -57,6 +71,10 @@ class Publishing_house(models.Model):  #описание издательств�
         verbose_name='Издательство'
         verbose_name_plural='Издательства'
 
+    def get_absolute_url(self):
+        return reverse("publishing_house_detail", kwargs={"pk": self.pk})
+    
+
     def __str__(self):
         return self.name
 
@@ -69,6 +87,10 @@ class Binding(models.Model):  #переплет книги
         ordering=['bindings']
         verbose_name='Переплет книги'
         verbose_name_plural='Виды переплета'
+
+    def get_absolute_url(self):
+        return reverse("binding_detail", kwargs={"pk": self.pk})
+    
 
     def __str__(self):
         return self.bindings
@@ -83,6 +105,10 @@ class Format(models.Model):  #переплет книги
         ordering=['formate']
         verbose_name='Формат книги'
         verbose_name_plural='Виды форматов'
+
+    def get_absolute_url(self):
+        return reverse("format_detail", kwargs={"pk": self.pk})
+    
 
     def __str__(self):
         return self.formate

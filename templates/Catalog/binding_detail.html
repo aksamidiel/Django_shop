@@ -1,12 +1,33 @@
-{% extends 'base_detail.html' %}
-{% block title %}
-  Тип_переплета {{ object.name }}
-{% endblock %}
-
-{% block for_list %}
-    <a href="{% url 'binding_list' %}">Переплеты</a>
-{% endblock %}
-
-{% block base %}
-    {% include "base.html" %}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Переплеты</title>
+    <style type="text/css">
+        table {
+            border: 5px;
+            width: 500px;
+        }
+        th, td {
+            padding: 7px;
+            border: 2px dotted grey
+        }
+        caption {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<table  align="left" cellpadding="5px" >
+    <caption>Переплеты</caption>
+    <tr>
+        <th>Тип</th>
+        <td>{{ object.bindings }}</td>
+    </tr>
+    <tr>
+        <th>Описание</th>
+        <td>{{ object.descriptions }}</td>
+    </tr>
+</table>
+</body>
+</html>

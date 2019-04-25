@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Книги</title>
+    <style type="text/css">
+        table {
+            border: 5px;
+            width: 500px;
+        }
+        th, td {
+            padding: 7px;
+            border: 2px dotted red
+        }
+        caption {
+            font-size: 4em;
+        }
+    </style>
+</head>
+<body>
+    <table  align='left' cellpadding="5px" >
+        <caption>{{ object.name }}</caption>
+        <tr>
+            <th>Автор</th>
+            <td>
+                {% for author_name in object.author.all %}
+                    {{ author_name }} <br>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th>Цена, $</th>
+            <td>{{ object.price }}</td>
+        </tr>
+        <tr>
+            <th>Серия</th>
+            <td>
+                {{ object.serie }}
+            </td>
+        </tr>
+        <tr>
+            <th>Жанр</th>
+            <td>
+                {% for genre_name in object.genre.all %}
+                    {{ genre_name }}<br>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th>Год издания</th>
+            <td>{{ object.year }}</td>
+        </tr>
+        <tr>
+            <th>Кол-во страниц</th>
+            <td>{{ object.page }}</td>
+        </tr>
+        <tr>
+            <th>Переплет</th>
+            <td>{{ object.bindings }}</td>
+        </tr>
+        <tr>
+            <th>Формат</th>
+            <td>{{ object.formate }}</td>
+        </tr>
+        <tr>
+            <th>ISBN</th>
+            <td>{{ object.ISBN }}</td>
+        </tr>
+        <tr>
+            <th>Вес, г</th>
+            <td>{{ object.mass }}</td>
+        </tr>
+        <tr>
+            <th>Возрастные ограничения</th>
+            <td>{{ object.rating}}</td>
+        </tr>
+        <tr>
+            <th>Издательство</th>
+            <td>{{ object.publish }}</td>
+        </tr>
+        <tr>
+            <th>Кол-во книг</th>
+            <td>{{ object.stock }}</td>
+        </tr>
+        <tr>
+            <th>Наличие</th>
+            <td>
+                {% if object.available %} На складе
+                {% else %} Отсутствует на складе
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

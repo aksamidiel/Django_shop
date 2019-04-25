@@ -1,11 +1,45 @@
-<nav>
-    <ul>
-        <li><a href="{% url 'author_list' %}">Авторы</a></li>
-        <li><a href="{% url 'serie_list' %}">Серии</a></li>
-        <li><a href="{% url 'genre_list' %}">Жанры</a></li>
-        <li><a href="{% url 'publish_list' %}">Издательства</a></li>
-        <li><a href="{% url 'binding_list' %}">Переплеты</a></li>
-        <li><a href="{% url 'format_book_list' %}">Форматы</a></li>
-        <li><a href="{% url 'book_list' %}">Книги</a> </li>
-    </ul>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню_ссылок</title>
+    <style type="text/css">
+        table {
+            width: 300px;
+        }
+        th {
+            padding: 7px;
+            border: solid dodgerblue 2px;
+            border-radius: 10px;
+            font-family: Arial;
+            font-size: 20px;
+        }
+        caption {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <table align="left" cellspacing="5">
+        <caption>Каталоги</caption>
+        <tr>
+            <th><a href="{% url 'author_list' %}">Авторы</a></th>
+        </tr>
+        <tr>
+            <th><a href="{% url 'genre_list' %}">Жанры</a></th>
+        </tr>
+        <tr>
+            <th><a href="{% url 'serie_list' %}">Серии</a></th>
+        </tr>
+        <tr>
+            <th><a href="{% url 'publish_list' %}">Издательства</a></th>
+        </tr>
+        <tr>
+            <th><a href="{% url 'binding_list' %}">Виды переплетов</a></th>
+        </tr>
+        <tr>
+            <th><a href="{% url 'format_list' %}">Форматы</a></th>
+        </tr>
+    </table>
+</body>
+</html>
