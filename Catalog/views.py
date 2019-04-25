@@ -35,7 +35,7 @@ class SerieList(ListView):
     def get_queryset(self, **kwargs):    # функция поиска
         qs=super().get_queryset(**kwargs)
         search=self.request.GET.get('name', 0)
-        if qs.filter(first_name__icontains=search).exists():
+        if qs.filter(name__icontains=search).exists():
             return qs.filter(name__icontains=search)
         else:
             return qs 
@@ -50,7 +50,7 @@ class GenreList(ListView):
     def get_queryset(self, **kwargs):    # функция поиска
         qs=super().get_queryset(**kwargs)
         search=self.request.GET.get('name', 0)
-        if qs.filter(first_name__icontains=search).exists():
+        if qs.filter(name__icontains=search).exists():
             return qs.filter(name__icontains=search)
         else:
             return qs 
@@ -67,7 +67,7 @@ class AuthorList(ListView):
         qs=super().get_queryset(**kwargs)
         search=self.request.GET.get('name', 0)
         if qs.filter(first_name__icontains=search).exists():
-            return qs.filter(name__icontains=search)
+            return qs.filter(first_name__icontains=search)
         else:
             return qs 
     
@@ -84,7 +84,7 @@ class PublishList(ListView):
     def get_queryset(self, **kwargs):    # функция поиска
         qs=super().get_queryset(**kwargs)
         search=self.request.GET.get('name', 0)
-        if qs.filter(first_name__icontains=search).exists():
+        if qs.filter(name__icontains=search).exists():
             return qs.filter(name__icontains=search)
         else:
             return qs 
@@ -101,8 +101,8 @@ class BindingList(ListView):
     def get_queryset(self, **kwargs):    # функция поиска
         qs=super().get_queryset(**kwargs)
         search=self.request.GET.get('name', 0)
-        if qs.filter(first_name__icontains=search).exists():
-            return qs.filter(name__icontains=search)
+        if qs.filter(bindings__icontains=search).exists():
+            return qs.filter(bindings__icontains=search)
         else:
             return qs 
 
@@ -117,8 +117,8 @@ class FormatList(ListView):
     def get_queryset(self, **kwargs):    # функция поиска
         qs=super().get_queryset(**kwargs)
         search=self.request.GET.get('name', 0)
-        if qs.filter(first_name__icontains=search).exists():
-            return qs.filter(name__icontains=search)
+        if qs.filter(formate__icontains=search).exists():
+            return qs.filter(formate__icontains=search)
         else:
             return qs 
 
