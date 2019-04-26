@@ -1,4 +1,7 @@
 from django import forms
+from django.forms import ModelForm
+from .models import Genre, Publishing_house, Authors, Serie, Binding, Format
+
 #from django.views.generic import ListView
 
 
@@ -6,9 +9,36 @@ class Search_Form(forms.Form):   #поисковая форма
     search = forms.CharField(label='Наименование', required=False)
 
 
-class Search_Author(forms.Form):   #поисковая форма автора по имени
-    search = forms.CharField(label='Имя', required=False)
+class Author_Form(ModelForm):   #поисковая форма автора по имени
+    class Meta:
+        model=Authors
+        fields=['first_name', 'last_name', 'country']
+    #search = forms.CharField(label='Имя', required=False)
 
+class Genre_Form(ModelForm):
+    class Meta:
+        model=Genre
+        fields=['name', 'description']
+
+class Binding_Form(ModelForm):
+    class Meta:
+        model=Binding
+        fields=['bindings', 'description']
+
+class Serie_Form(ModelForm):
+    class Meta:
+        model=Serie
+        fields=['name', 'description']
+
+class Publish_Form(ModelForm):
+    class Meta:
+        model=Genre
+        fields=['name', 'description']
+
+class Format_Form(ModelForm):
+    class Meta:
+        model=Genre
+        fields=['formate', 'description']
 
 #class List_Filter(ListView):    #специальный класс основанный на ListView для организации своей логики поиска
    # form = Search_Form

@@ -5,7 +5,8 @@ from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 from .models import *
 from books.models import Menu
-from Catalog.search_form import Search_Author, Search_Form
+from django.urls import reverse_lazy
+from .search_form import *
 
 
 # Create your views here.
@@ -130,11 +131,80 @@ class FormatList(ListView):
 
 class Genre_Create(CreateView):    # создание нового жанра
     model=Genre
-    fields=['name', 'description']
+    template_name='Create/create_form.html'
+    form_class=Genre_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('genre_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('genre_list')
+        return reverse_lazy('genre_create')
+
+    
 
 class Serie_Create(CreateView):   #создание новой серии
     model=Serie
-    fields=['name', 'description']
+    template_name='Create/create_form.html'
+    form_class=Serie_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('serie_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('serie_list')
+        return reverse_lazy('serie_create')
+
+class Author_Create(CreateView):   #создание новых авторов
+    model=Authors
+    template_name='Create/create_form.html'
+    form_class=Author_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('author_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('author_list')
+        return reverse_lazy('author_create')
+
+class Binding_Create(CreateView):   #создание нового переплета
+    model=Binding
+    template_name='Create/create_form.html'
+    form_class=Binding_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('binding_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('binding_list')
+        return reverse_lazy('binding_create')
+
+class Format_Create(CreateView):   #создание нового формата 
+    model=Format
+    template_name='Create/create_form.html'
+    form_class=Format_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('format_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('format_list')
+        return reverse_lazy('format_create')
+
+
+class Publish_Create(CreateView):   #создание нового издательства
+    model=Serie
+    template_name='Create/create_form.html'
+    form_class=Serie_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('publish_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('publish_list')
+        return reverse_lazy('publish_create')
+
+
 
 
 
