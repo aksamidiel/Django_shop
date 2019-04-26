@@ -47,12 +47,12 @@ urlpatterns = [
     path('book/<int:pk>', BookDetail.as_view(), name='book_detail'),
 
     #create_field
-    path('ref/genre_create', Genre_Create.as_view(), name='genre_create'),
-    path('ref/serie_create', Serie_Create.as_view(), name='serie_create'),
-    path('ref/binding_create', Binding_Create.as_view(), name='binding_create'),
-    path('ref/publish_create', Publish_Create.as_view(), name='publish_create'),
-    path('ref/format_create', Format_Create.as_view(), name='format_create'),
-    path('ref/author_create', Author_Create.as_view(), name='author_create'),
+    path('ref/create/genre_create', Genre_Create.as_view(), name='genre_create'),
+    path('ref/create/serie_create', Serie_Create.as_view(), name='serie_create'),
+    path('ref/create/binding_create', Binding_Create.as_view(), name='binding_create'),
+    path('ref/create/publish_create', Publish_Create.as_view(), name='publish_create'),
+    path('ref/create/format_create', Format_Create.as_view(), name='format_create'),
+    path('ref/create/author_create', Author_Create.as_view(), name='author_create'),
 
     #path('',Menu_view.as_view())  #вывод меню
     #path('contacts', about)

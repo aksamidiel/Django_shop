@@ -32,12 +32,12 @@ class Serie_Form(ModelForm):
 
 class Publish_Form(ModelForm):
     class Meta:
-        model=Genre
+        model=Publishing_house
         fields=['name', 'description']
 
 class Format_Form(ModelForm):
     class Meta:
-        model=Genre
+        model=Format
         fields=['formate', 'description']
 
 #class List_Filter(ListView):    #специальный класс основанный на ListView для организации своей логики поиска
