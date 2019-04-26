@@ -47,12 +47,23 @@ urlpatterns = [
     path('book/<int:pk>', BookDetail.as_view(), name='book_detail'),
 
     #create_field
-    path('ref/create/genre_create', Genre_Create.as_view(), name='genre_create'),
-    path('ref/create/serie_create', Serie_Create.as_view(), name='serie_create'),
-    path('ref/create/binding_create', Binding_Create.as_view(), name='binding_create'),
-    path('ref/create/publish_create', Publish_Create.as_view(), name='publish_create'),
-    path('ref/create/format_create', Format_Create.as_view(), name='format_create'),
-    path('ref/create/author_create', Author_Create.as_view(), name='author_create'),
+    path('ref/Create/Genre_Create', Genre_Create.as_view(), name='genre_create'),
+    path('ref/Create/Serie_Create', Serie_Create.as_view(), name='serie_create'),
+    path('ref/Create/Binding_Create', Binding_Create.as_view(), name='binding_create'),
+    path('ref/Create/Publish_Create', Publish_Create.as_view(), name='publish_create'),
+    path('ref/Create/Format_Create', Format_Create.as_view(), name='format_create'),
+    path('ref/Create/Author_Create', Author_Create.as_view(), name='author_create'),
+
+
+    #update fields
+    path('ref/Update/Genre_Update', Genre_Update.as_view(), name='genre_update'),
+    path('ref/Update/Serie_Update', Serie_Update.as_view(), name='serie_update'),
+    path('ref/Update/Binding_Update', Binding_Update.as_view(), name='binding_update'),
+    path('ref/Update/Publish_Update', Publish_Update.as_view(), name='publish_update'),
+    path('ref/Update/Format_Update', Format_Update.as_view(), name='format_update'),
+    path('ref/Update/Author_Update', Author_Update.as_view(), name='author_update'),
+
+
 
     #path('',Menu_view.as_view())  #вывод меню
     #path('contacts', about)

@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import TemplateView
+
 from .models import *
 from books.models import Menu
 from django.urls import reverse_lazy
@@ -208,7 +209,82 @@ class Publish_Create(CreateView):   #создание нового издате�
 
 
 
+class Author_Update(UpdateView):
+    model = Authors
+    template_name = 'Catalog/Update/update_form.html'
+    form_class = Author_Form
 
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('author_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('author_list')
+        return reverse_lazy('author_update')
+
+
+class Genre_Update(UpdateView):
+    model = Genre
+    template_name = 'Catalog/Update/update_form.html'
+    form_class = Genre_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('genre_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('genre_list')
+        return reverse_lazy('genre_update')
+
+
+class Serie_Update(UpdateView):
+    model = Serie
+    template_name = 'Catalog/Update/update_form.html'
+    form_class = Serie_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('serie_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('serie_list')
+        return reverse_lazy('serie_update')
+
+
+class Publish_Update(UpdateView):
+    model = Publishing_house
+    template_name = 'Catalog/Update/update_form.html'
+    form_class = Publish_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('publish_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('publish_list')
+        return reverse_lazy('publish_update')
+
+
+class Binding_Update(UpdateView):
+    model = Binding
+    template_name = 'Catalog/Update/update_form.html'
+    form_class = Binding_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('binding_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('binding_list')
+        return reverse_lazy('binding_update')
+
+
+class Format_Update(UpdateView):
+    model = Format
+    template_name = 'Catalog/Update/update_form.html'
+    form_class = Format_Form
+
+    def get_success_url(self):
+        if self.request.POST.get('detail'):
+            return reverse_lazy('format_detail', kwargs={'pk': self.object.pk})
+        elif self.request.POST.get('list'):
+            return reverse_lazy('format_list')
+        return reverse_lazy('format_update')
 
 
 
