@@ -34,7 +34,7 @@ class Authors(models.Model):    #описание авторы
         verbose_name_plural='Авторы'
 
     def get_absolute_url(self):
-        return reverse("authors_detail", kwargs={"pk": self.pk})
+        return reverse("author_detail", kwargs={"pk": self.pk})
     
        
 
@@ -72,7 +72,7 @@ class Publishing_house(models.Model):  #описание издательств�
         verbose_name_plural='Издательства'
 
     def get_absolute_url(self):
-        return reverse("publishing_house_detail", kwargs={"pk": self.pk})
+        return reverse("publish_detail", kwargs={"pk": self.pk})
     
 
     def __str__(self):
