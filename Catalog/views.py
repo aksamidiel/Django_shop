@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import TemplateView
 
 from .models import *
-from books.models import Menu
+#from books.models import Menu
 from django.urls import reverse_lazy
 from .search_form import *
 

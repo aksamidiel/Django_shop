@@ -29,26 +29,21 @@ class Book(models.Model):
 
 
     class Meta():
-        ordering = ['name']
-        index_together = [
-            ['id', 'description']
-
         
-        ]
         verbose_name="книга"
         verbose_name_plural = "книги"
 
     def __str__(self):
         return self.name
 
-class Menu(models.Model):
-    name=models.CharField("Пункт", max_length=50, unique=True)
-    url_name = models.CharField("Cсылка", max_length=80)
-    general_menu = models.ForeignKey('Menu', on_delete=models.PROTECT, related_name='general_menu_obj',
-                                related_query_name='general_menu_obj', null=True, blank=True)
+#class Menu(models.Model):
+   # name=models.CharField("Пункт", max_length=50, unique=True)
+   # url_name = models.CharField("Cсылка", max_length=80)
+   # general_menu = models.ForeignKey('Menu', on_delete=models.PROTECT, related_name='general_menu_obj',
+    #                            related_query_name='general_menu_obj', null=True, blank=True)
 
-    def __str__(self):
-        return self.name
+   # def __str__(self):
+    #    return self.name
 
 
 

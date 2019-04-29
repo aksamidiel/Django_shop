@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from .models import Menu, Book
+from .models import  Book
 
 # Create your views here.
 #контроллер по MVC
