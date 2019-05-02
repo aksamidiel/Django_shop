@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 from .models import *
 #from books.models import Menu
 from django.urls import reverse_lazy
-from .search_form import *
+from .form import *
 
 
 # Create your views here.
@@ -60,6 +60,7 @@ class GenreList(ListView):
 #для вьюхи автора
 class AuthorDetail(DetailView):
     model=Authors
+
 class AuthorList(ListView):
     model=Authors
     #form=Search_Author

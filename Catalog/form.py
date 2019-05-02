@@ -6,7 +6,7 @@ from .models import Genre, Publishing_house, Authors, Serie, Binding, Format
 
 
 class Search_Form(forms.Form):   #поисковая форма
-    search = forms.CharField(label='Наименование', required=False)
+    search = forms.CharField(label='Наименование')
 
 
 class Author_Form(ModelForm):   #поисковая форма автора по имени

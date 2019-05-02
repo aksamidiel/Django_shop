@@ -19,7 +19,7 @@ from Catalog.views import *
 from django.views.generic import TemplateView
 #from books.models import Menu
 from books.views import BookList, BookDetail
-from Catalog.search_form import *
+from Catalog.form import *
 from django.urls import include   #
 
 

@@ -26,12 +26,12 @@ urlpatterns = [
 
 
     #update fields
-    path('Update/Genre_Update', Genre_Update.as_view(), name='genre_update'),
-    path('Update/Serie_Update', Serie_Update.as_view(), name='serie_update'),
-    path('Update/Binding_Update', Binding_Update.as_view(), name='binding_update'),
-    path('Update/Publish_Update', Publish_Update.as_view(), name='publish_update'),
-    path('Update/Format_Update', Format_Update.as_view(), name='format_update'),
-    path('Update/Author_Update', Author_Update.as_view(), name='author_update'),
+    path('Update/Genre_Update/<int:pk>', Genre_Update.as_view(), name='genre_update'),
+    path('Update/Serie_Update/<int:pk>', Serie_Update.as_view(), name='serie_update'),
+    path('Update/Binding_Update/<int:pk>', Binding_Update.as_view(), name='binding_update'),
+    path('Update/Publish_Update/<int:pk>', Publish_Update.as_view(), name='publish_update'),
+    path('Update/Format_Update/<int:pk>', Format_Update.as_view(), name='format_update'),
+    path('Update/Author_Update/<int:pk>', Author_Update.as_view(), name='author_update'),
 
 
 ]

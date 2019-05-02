@@ -20,6 +20,15 @@
     </style>
 </head>
 <body>
+
+<div>
+<caption>Все книги</caption>
+
+<tr>
+<th><a href="{% url 'book_list' %}">Книги</a></th>
+</tr>
+ </div>
+
     <table align="left" cellspacing="5">
         <caption>Каталоги</caption>
         <tr>
@@ -41,5 +50,6 @@
             <th><a href="{% url 'format_list' %}">Форматы</a></th>
         </tr>
     </table>
+
 </body>
 </html>

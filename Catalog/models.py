@@ -33,8 +33,8 @@ class Authors(models.Model):    #описание авторы
         verbose_name='Автор'
         verbose_name_plural='Авторы'
 
-    #def get_absolute_url(self):
-        #return reverse("author_detail", kwargs={"pk": self.pk})
+    def get_absolute_url(self):
+        return reverse("author_detail", kwargs={"pk": self.pk})
     
        
 
